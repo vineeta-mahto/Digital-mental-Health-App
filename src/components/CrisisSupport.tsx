@@ -1,4 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Alert, AlertDescription } from "./ui/alert";
 import { 
@@ -234,6 +235,3 @@ export function CrisisSupport() {
     </section>
   );
 }
-
-// Import the Badge component that was missing
-import { Badge } from "./ui/badge";
