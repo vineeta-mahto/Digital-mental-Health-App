@@ -4,6 +4,7 @@
   import path from 'path';
 
   export default defineConfig({
+    base: '/Digital-mental-Health-App/',
     plugins: [react()],
     resolve: {
       alias: {
