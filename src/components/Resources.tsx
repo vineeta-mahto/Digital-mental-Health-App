@@ -71,7 +71,7 @@ export function Resources() {
       duration: "8:30",
       category: "Relaxation",
       views: "12K views",
-      thumbnail: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=225&fit=crop",
+      thumbnail: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=225&fit=crop",
       youtubeUrl: "https://www.youtube.com/watch?v=1nZEdqcGVzo"
     }
   ];
