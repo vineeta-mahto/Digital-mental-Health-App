@@ -53,7 +53,8 @@ export function Resources() {
       duration: "5:23",
       category: "Mindfulness",
       views: "15K views",
-      thumbnail: "https://images.unsplash.com/photo-1687180948607-9ba1dd045e10?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWRpdGF0aW9uJTIwd2VsbG5lc3MlMjBjYWxtfGVufDF8fHx8MTc1ODYzMjkzMXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+      thumbnail: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=225&fit=crop",
+      youtubeUrl: "https://www.youtube.com/watch?v=YRPh_GaiL8s"
     },
     {
       title: "Understanding Depression in Students",
@@ -61,7 +62,8 @@ export function Resources() {
       duration: "12:45",
       category: "Mental Health Education",
       views: "8.2K views",
-      thumbnail: "https://images.unsplash.com/photo-1758270704025-0e1a1793e1ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxkaXZlcnNlJTIwc3R1ZGVudHMlMjBzdHVkeWluZ3xlbnwxfHx8fDE3NTg3Mjc3NTl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+      thumbnail: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=225&fit=crop",
+      youtubeUrl: "https://www.youtube.com/watch?v=z-IR48Mb3W0"
     },
     {
       title: "Progressive Muscle Relaxation Technique",
@@ -69,7 +71,8 @@ export function Resources() {
       duration: "8:30",
       category: "Relaxation",
       views: "12K views",
-      thumbnail: "https://images.unsplash.com/photo-1687180948607-9ba1dd045e10?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWRpdGF0aW9uJTIwd2VsbG5lc3MlMjBjYWxtfGVufDF8fHx8MTc1ODYzMjkzMXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+      thumbnail: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=225&fit=crop",
+      youtubeUrl: "https://www.youtube.com/watch?v=1nZEdqcGVzo"
     }
   ];
 
@@ -176,36 +179,38 @@ export function Resources() {
           <TabsContent value="videos" className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {videos.map((video, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-                  <div className="relative">
-                    <ImageWithFallback
-                      src={video.thumbnail}
-                      alt={video.title}
-                      className="w-full h-48 object-cover rounded-t-lg"
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-40 rounded-t-lg flex items-center justify-center">
-                      <div className="bg-white bg-opacity-90 rounded-full p-3">
-                        <Play className="h-6 w-6 text-gray-800 ml-0.5" />
+                <a href={video.youtubeUrl} target="_blank" rel="noopener noreferrer" key={index}>
+                  <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
+                    <div className="relative">
+                      <ImageWithFallback
+                        src={video.thumbnail}
+                        alt={video.title}
+                        className="w-full h-48 object-cover rounded-t-lg"
+                      />
+                      <div className="absolute inset-0 bg-black bg-opacity-40 rounded-t-lg flex items-center justify-center">
+                        <div className="bg-white bg-opacity-90 rounded-full p-3">
+                          <Play className="h-6 w-6 text-gray-800 ml-0.5" />
+                        </div>
                       </div>
-                    </div>
-                    <Badge className="absolute top-2 right-2 bg-black bg-opacity-75">
-                      {video.duration}
-                    </Badge>
-                  </div>
-                  <CardHeader>
-                    <div className="flex items-start justify-between mb-2">
-                      <Badge variant="secondary" className="text-xs">
-                        {video.category}
+                      <Badge className="absolute top-2 right-2 bg-black bg-opacity-75">
+                        {video.duration}
                       </Badge>
-                      <span className="text-xs text-gray-500">{video.views}</span>
                     </div>
-                    <CardTitle className="text-lg">{video.title}</CardTitle>
-                    <CardDescription>{video.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button className="w-full">Watch Video</Button>
-                  </CardContent>
-                </Card>
+                    <CardHeader>
+                      <div className="flex items-start justify-between mb-2">
+                        <Badge variant="secondary" className="text-xs">
+                          {video.category}
+                        </Badge>
+                        <span className="text-xs text-gray-500">{video.views}</span>
+                      </div>
+                      <CardTitle className="text-lg">{video.title}</CardTitle>
+                      <CardDescription>{video.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <Button className="w-full">Watch Video</Button>
+                    </CardContent>
+                  </Card>
+                </a>
               ))}
             </div>
           </TabsContent>
